@@ -1,0 +1,9 @@
+\section{Conclusion}\label{sec:conclusion}
+
+The naive approach of implementing a Sokoban solver based on pure brute force search has proven to be inefficient, even for simple board configurations. In more complex scenarios, no solution is obtained within a reasonable time limit. 
+
+Huge performance boosts are observed when the traditional search methods are augmented with heuristics, to prioritize nodes with higher values over those which are redundant. However, different types of Sokoban boards require different strategies. For this reason, using a single heuristic to solve every map will not yield optimal results. The Sokoban problem is not beyond current computational power, but the current heuristics that help us explore the search tree are static, incapable of adapting to different maps. Thus, we have to find a way to mimic human behaviour in the machine, and make it capable of changing its strategy at runtime. 
+
+A multi-faceted approach which utilizes multiple solving strategies, should in theory have an advantage over specialized solutions, optimized for a select number of puzzles. In practice however we found that a good solver will almost always be significantly better than a bad solver, irrelevant of the puzzle. Great attention should be paid to the heuristics, as these are of utmost importance for the performance of all informed search methods. This should come as no surprise, as previous research has led to the same conclusion \cite{junghanns2001sokoban}.
+
+An interesting piece of future work would be to optimize the heuristic function. Heuristic functions can totally affect the solvability and the complexity. For example, heuristics based on pattern detection, move ordering or macro moves can be used to boost agent's performance. However, which is the best heuristic is a matter of debate. 

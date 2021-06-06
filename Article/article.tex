@@ -1,0 +1,45 @@
+\documentclass[10pt,a4paper,twocolumn]{article}
+\usepackage{sokoban}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{url}
+\usepackage{stfloats}
+\usepackage{indentfirst}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\DefineVerbatimEnvironment{code}{Verbatim}{fontsize=\small}
+\DefineVerbatimEnvironment{example}{Verbatim}{fontsize=\small}
+
+\title{{\bf Solving the Sokoban Problem}\\ \Large{(Artificial Intelligence 11)}}
+
+\author{M. Dorst, M. Gerontini, A. Marzinotto, R. Pana}
+
+\date{\today}
+
+\begin{document}
+
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\maketitle
+\input{./tex/authors.tex}
+
+\pagebreak
+
+\twocolumn[
+    	\begin{@twocolumnfalse}
+     		\input{./tex/abstract.tex}
+	\end{@twocolumnfalse}
+]
+\input{./tex/introduction.tex}
+\input{./tex/related_research.tex}
+\input{./tex/methods.tex}
+\input{./tex/results.tex}
+\input{./tex/conclusion.tex}
+
+
+%\bibliographystyle{plainnat}
+\bibliographystyle{unsrt}
+\bibliography{sokoban}
+
+\end{document}

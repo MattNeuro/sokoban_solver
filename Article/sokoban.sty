@@ -1,0 +1,54 @@
+\ProvidesPackage{sokoban}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage{float}
+\usepackage{caption}  % voor caption aanpassingen %\usepackage[center]{caption}  % voor centreren caption
+\usepackage{color}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{multirow}
+%\usepackage[round,longnamesfirst]{natbib} % 'round' voor ronde haken, % 'longnamesfirst' voor vermelden van alle auteurs (1e referentie)
+
+\ifx\pdfoutput\undefined
+  % we are running LaTeX, not pdflatex
+  \usepackage{graphicx}
+\else
+  % we are running pdflatex, so convert .eps files to .pdf
+  %\usepackage[pdftex]{graphicx}
+  %\usepackage{epstopdf}
+\fi
+\selectlanguage{english}
+\DeclareCaptionFont{bold}{\bfseries}
+\DeclareCaptionFont{normal}{\color{black}}
+%\captionsetup{labelfont=bold,textfont=normal}
+%\captionsetup{labelfont=bold,font={normal}}
+\captionsetup{font=small,labelfont=bf,textfont=bf}
+
+
+% hiermee kan je vaker naar een footnote refereren, zie:
+% http://anthony.liekens.net/index.php/LaTeX/MultipleFootnoteReferences
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\newcommand{\footnoteremember}[2]{\footnote{#2}\newcounter{#1}\setcounter{#1}{\value{footnote}}}
+\newcommand{\footnoterecall}[1]{\footnotemark[\value{#1}]}
+
+% the following lines makes sure equations and algorithms are not just numbered 1, 2, ...,N but SectionNr.EquationNr
+\numberwithin{equation}{section}
+\numberwithin{algorithm}{section}
+
+
+\renewcommand{\topfraction}{0.9}	% max fraction of floats at top
+\renewcommand{\bottomfraction}{0.8}	% max fraction of floats at bottom
+ %   Parameters for TEXT pages (not float pages):
+    \setcounter{topnumber}{2}
+    \setcounter{bottomnumber}{2}
+    \setcounter{totalnumber}{4}     % 2 may work better
+    \setcounter{dbltopnumber}{2}    % for 2-column pages
+    \renewcommand{\dbltopfraction}{0.9}	% fit big float above 2-col. text
+    \renewcommand{\textfraction}{0.07}	% allow minimal text w. figs
+    %   Parameters for FLOAT pages (not text pages):
+    \renewcommand{\floatpagefraction}{0.7}	% require fuller float pages
+	% N.B.: floatpagefraction MUST be less than topfraction !!
+    \renewcommand{\dblfloatpagefraction}{0.7}	% require fuller float pages
